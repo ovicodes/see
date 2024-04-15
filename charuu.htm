@@ -45,15 +45,12 @@ function startTimer() {
         var targetDate = new Date("May 2, 2024 00:00:00");
         var timeDifference = targetDate.getTime() - now.getTime();
 
-        var years = Math.floor(timeDifference / (1000 * 60 * 60 * 24 * 365));
-        var months = Math.floor((timeDifference % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
-        var days = Math.floor((timeDifference % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+        var days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
         var hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-        timerDisplay.innerHTML = years + " years " + months + " months " + days + " days " + hours + " hours "
-            + minutes + " minutes " + seconds + " seconds ";
+        timerDisplay.innerHTML = days + " days " + hours + " hours " + minutes + " minutes " + seconds + " seconds ";
     }, 1000);
 }
 
